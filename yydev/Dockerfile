@@ -10,6 +10,7 @@ RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-7 main" | tee -a
     && apt-get install -y g++-4.6 g++-4.6-multilib\
     && apt-get install -y clang-7\
     && apt-get install -y make\
+    && apt-get install -y bc\
     && apt-get install -y libc6-dev-i386 uuid-dev:i386 libssl-dev:i386 libuuid1:i386 lib32z1 libcomerr2:i386 libk5crypto3:i386 libkrb5-3:i386 libidn11:i386 libgssapi-krb5-2:i386 libssl1.0.0:i386\
     && rm -f /usr/bin/gcc\
     && rm -f /usr/bin/g++\
