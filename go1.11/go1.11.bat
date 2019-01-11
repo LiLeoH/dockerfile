@@ -1,0 +1,1 @@
+docker run -it --rm  --name=dev -v /r/code:/mnt/hgfs/code -v /r/code/server_baselib/branches/release_3/go:/mnt/go --env GOPATH=/mnt/go lileoh/yydev:go1.11 /bin/bash
