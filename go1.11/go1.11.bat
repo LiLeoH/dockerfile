@@ -1,1 +1,1 @@
-docker run -it --rm  --name=dev -v /r/code:/mnt/hgfs/code -v /r/code/server_baselib/branches/release_3/go:/mnt/go --env GOPATH=/mnt/go lileoh/yydev:go1.11 /bin/bash
+docker run -it --rm -v /r/code:/mnt/hgfs/code -v /r/code/server_baselib/branches/release_3/go:/mnt/go -w /mnt/go/src -v R:/docker/runapp:/home/dspeak/yyms --env GOPATH=/mnt/go --env LD_LIBRARY_PATH=/mnt/go/src/yy.com/c/lib lileoh/yydev:go1.11 /bin/bash

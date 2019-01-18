@@ -1,8 +1,8 @@
-FROM lileoh/yydev:cquery
+FROM lileoh/yydev:gcc4.6
 
-RUN apt install -y gdb \
-    && apt install -y telnet \
-    && apt install -y strace \
-    && apt install -y vim 
+RUN apt-get install -y gdb \
+    && apt-get install -y telnet \
+    && apt-get install -y strace \
+    && apt-get install -y vim 
 
 ENTRYPOINT ["/bin/bash", "/home/dspeak/yyms/init.sh"]
