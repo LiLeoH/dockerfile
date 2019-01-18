@@ -10,7 +10,6 @@ RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-7 main" | tee -a
     && apt-get install -y g++-4.6 g++-4.6-multilib\
     && apt-get install -y clang-7\
     && apt-get install -y make\
-    && apt-get install -y bc\
     && apt-get install -y libc6-dev-i386 uuid-dev:i386 libssl-dev:i386 libuuid1:i386 lib32z1 libcomerr2:i386 libk5crypto3:i386 libkrb5-3:i386 libidn11:i386 libgssapi-krb5-2:i386 libssl1.0.0:i386\
     && rm -f /usr/bin/gcc\
     && rm -f /usr/bin/g++\
@@ -21,9 +20,10 @@ RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-7 main" | tee -a
     && ln -s /lib/i386-linux-gnu/libuuid.so.1 /lib/i386-linux-gnu/libuuid.so\
     && ln -s /usr/lib32/libz.so.1 /usr/lib32/libz.so
 
-RUN mv /usr/include/c++/4.6/x86_64-linux-gnu/32/bits/c++config.h /usr/include/c++/4.6/x86_64-linux-gnu/32/bits/c++config.h.bak\
-    && mv /usr/include/c++/4.6/x86_64-linux-gnu/bits/c++config.h /usr/include/c++/4.6/x86_64-linux-gnu/bits/c++config.h.bak
+RUN mv /usr/include/c++/4.6/x86_64-linux-gnu/32/bits/c++config.h /usr/include/c++/4.6/x86_64-linux-gnu/32/bits/c++config.h.bak
 COPY c++config.h /usr/include/c++/4.6/x86_64-linux-gnu/32/bits/
 COPY c++config.h /usr/include/c++/4.6/x86_64-linux-gnu/bits/
-COPY libcrypto.so.0.9.8 /lib/i386-linux-gnu/
-COPY libssl.so.0.9.8 /lib/i386-linux-gnu/
+COPY ./lib32/libcrypto.so.0.9.8 /lib/i386-linux-gnu/
+COPY ./lib32/libssl.so.0.9.8 /lib/i386-linux-gnu/
+COPY ./lib64/libcrypto.so.0.9.8 /lib/x86_64-linux-gnu/
+COPY ./lib64/libssl.so.0.9.8 /lib/x86_64-linux-gnu/
