@@ -1,0 +1,7 @@
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES -DSYSTEM_CLANG=ON -DCMAKE_PREFIX_PATH="/usr/lib/llvm-7"
+
+docker run -it --rm --name=cquery -p 9876:9876 -w /mnt/hgfs/code/github/LiLeoH/cquery/build -v r:/code:/mnt/hgfs/code -v R:/cquery_cache:/mnt/hgfs/cquery_cache lileoh/yydev:cquery /bin/bash
+
+winpty docker run --rm -w //mnt/code/server/trunk/music_entnoble_d/ -v //e/code://mnt/code lileoh/yydev:gcc4.6 make
+winpty docker run -it --rm -v //e/code://mnt/code lileoh/yydev:cquery //bin/bash
+winpty docker run -it --rm --security-opt seccomp=unconfined -v //e/code://mnt/hgfs/code -v //e/code/server_baselib/branches/release_3/test/home://home/dspeak/yyms lileoh/yydev:runapp
