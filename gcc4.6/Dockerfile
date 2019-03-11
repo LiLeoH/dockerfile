@@ -6,6 +6,7 @@ RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-7 main" | tee -a
     && apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 1E9377A2BA9EF27F\
     && dpkg --add-architecture i386\
     && apt-get update\
+    && apt-get install apt-utils\
     && apt-get install -y gcc-4.6 gcc-4.6-multilib\
     && apt-get install -y g++-4.6 g++-4.6-multilib\
     && apt-get install -y clang-7\
