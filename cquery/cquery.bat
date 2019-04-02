@@ -1,1 +1,1 @@
-docker run -it --rm --name=cquery -p 9876:9876 -w /mnt/hgfs/code/github/LiLeoH/cquery/build -v r:/code:/mnt/hgfs/code -v R:/cquery_cache:/mnt/hgfs/cquery_cache lileoh/yydev:cquery ./cquery --cfg=../config.json
+docker run -it --rm --name=cquery -p 9876:9876 -w /mnt/hgfs/code/github/LiLeoH/cquery/build -v r:/code:/mnt/hgfs/code -v R:/cquery_cache:/mnt/hgfs/cquery_cache lileoh/dev:cquery ./cquery --cfg=../config.json

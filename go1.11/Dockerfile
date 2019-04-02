@@ -1,4 +1,4 @@
-FROM lileoh/yydev:runapp
+FROM lileoh/dev:runapp
 
 ADD go1.11.5.linux-amd64.tar.gz /usr/local/
 ENV PATH $PATH:/usr/local/go/bin
