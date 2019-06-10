@@ -7,12 +7,12 @@ RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-8 main" | tee -a
     && apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 1E9377A2BA9EF27F\
     && dpkg --add-architecture i386\
     && apt-get update
-RUN DEBIAN_FRONTEND="noninteractive" apt-get install -y apt-utils\
-    && DEBIAN_FRONTEND="noninteractive" apt-get install -y gcc-4.6 gcc-4.6-multilib\
-    && DEBIAN_FRONTEND="noninteractive" apt-get install -y g++-4.6 g++-4.6-multilib\
-    && DEBIAN_FRONTEND="noninteractive" apt-get install -y clang-8\
-    && DEBIAN_FRONTEND="noninteractive" apt-get install -y make\
-    && DEBIAN_FRONTEND="noninteractive" apt-get install -y libc6-dev-i386 uuid-dev:i386 libssl-dev:i386 libuuid1:i386 lib32z1 libcomerr2:i386 libk5crypto3:i386 libkrb5-3:i386 libidn11:i386 libgssapi-krb5-2:i386 libssl1.0.0:i386\
+RUN apt-get install -y bc git\
+    && apt-get install -y gcc-4.6 gcc-4.6-multilib\
+    && apt-get install -y g++-4.6 g++-4.6-multilib\
+    && apt-get install -y clang-8\
+    && apt-get install -y make\
+    && apt-get install -y libc6-dev-i386 uuid-dev:i386 libssl-dev:i386 libuuid1:i386 lib32z1 libcomerr2:i386 libk5crypto3:i386 libkrb5-3:i386 libidn11:i386 libgssapi-krb5-2:i386 libssl1.0.0:i386\
     && rm -f /usr/bin/gcc\
     && rm -f /usr/bin/g++\
     && ln -s /usr/bin/gcc-4.6 /usr/bin/gcc\
