@@ -12,7 +12,7 @@ RUN apt-get install -y bc git\
     && apt-get install -y g++-4.6 g++-4.6-multilib\
     && apt-get install -y clang-8\
     && apt-get install -y make\
-    && apt-get install -y libc6-dev-i386 uuid-dev:i386 libssl-dev:i386 libuuid1:i386 lib32z1 libcomerr2:i386 libk5crypto3:i386 libkrb5-3:i386 libidn11:i386 libgssapi-krb5-2:i386 libssl1.0.0:i386\
+    && apt-get install -y libc6-dev-i386 uuid-dev:i386 libssl-dev:i386 libuuid1:i386 lib32z1 libcomerr2:i386 libk5crypto3:i386 libkrb5-3:i386 libidn11:i386 libgssapi-krb5-2:i386 libssl1.0.0:i386 libcurl4-openssl-dev:i386\
     && rm -f /usr/bin/gcc\
     && rm -f /usr/bin/g++\
     && ln -s /usr/bin/gcc-4.6 /usr/bin/gcc\

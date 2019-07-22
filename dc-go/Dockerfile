@@ -11,7 +11,7 @@ ADD hostinfo.ini /home/dspeak/yyms
 ADD hosts.txt /home/dspeak/yyms
 RUN cat /home/dspeak/yyms/hosts.txt >> /etc/hosts
 
-ADD go1.11.10.linux-amd64.tar.gz /usr/local/
+ADD go1.11.11.linux-amd64.tar.gz /usr/local/
 ENV PATH $PATH:/usr/local/go/bin
 ENV GOROOT /usr/local/go
 
