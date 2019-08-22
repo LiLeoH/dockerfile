@@ -1,1 +1,1 @@
-docker run -it --rm --security-opt seccomp:unconfined -w /mnt/hgfs/code/git.yy.com -v r:/code:/mnt/hgfs/code -v R:/dockerfile/runapp:/home/dspeak/yyms --env LANG=C.UTF-8 lileoh/dev:dc-ccls /bin/bash
+docker run -it --rm --security-opt seccomp:unconfined -w /mnt/hgfs/code/git.yy.com -v r:/code:/mnt/hgfs/code -v R:/dockerfile/runapp:/home/dspeak/yyms -e LANG=en_US.UTF-8 lileoh/dev:dc-ccls /bin/bash
