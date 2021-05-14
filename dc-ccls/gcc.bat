@@ -1,1 +1,1 @@
-docker run -it --rm --security-opt seccomp:unconfined -w /mnt/hgfs/code/git.yy.com -v r:/code:/mnt/hgfs/code -v R:/dockerfile/runapp:/home/dspeak/yyms -e LANG=en_US.UTF-8 --add-host meta.yy.com:14.17.106.94  --net=host lileoh/dev:dc-ccls /bin/bash
+docker run -it --rm --security-opt seccomp:unconfined --cap-add=SYS_PTRACE -w /mnt/hgfs/code/git.yy.com -v r:/code:/mnt/hgfs/code -v R:/dockerfile/runapp:/home/dspeak/yyms -v R:/code/boost_1_72_0/boost:/usr/local/include/boost -e LANG=en_US.UTF-8 --add-host meta.yy.com:14.17.106.94  --net=host lileoh/dev:dc-ccls /bin/bash
