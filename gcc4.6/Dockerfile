@@ -1,15 +1,13 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y apt-transport-https && apt-get install -y python-software-properties
-
-RUN echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-10 main" | tee -a /etc/apt/sources.list\
-    && echo "deb-src http://apt.llvm.org/xenial/ llvm-toolchain-xenial-10 main" | tee -a /etc/apt/sources.list\
-    && echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu xenial main " | tee -a /etc/apt/sources.list\
-    && apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 15CF4D18AF4F7421\
+RUN echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu xenial main " | tee -a /etc/apt/sources.list\
     && apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 1E9377A2BA9EF27F\
     && dpkg --add-architecture i386\
     && apt-get update
 
+RUN apt-get install -y apt-transport-https && apt-get install -y python-software-properties
+RUN apt-get install -y libc6-dev-i386 uuid-dev:i386 libssl-dev:i386 libuuid1:i386 libcurl4-openssl-dev:i386\
+    lib32z1 libcomerr2:i386 libk5crypto3:i386 libkrb5-3:i386 libidn11:i386 libgssapi-krb5-2:i386 libssl1.0.0:i386
 RUN apt-get install -y bc\
     && apt-get install -y gcc-4.6 gcc-4.6-multilib\
     && apt-get install -y g++-4.6 g++-4.6-multilib\
